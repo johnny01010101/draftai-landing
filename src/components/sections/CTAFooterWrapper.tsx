@@ -3,7 +3,7 @@ import { LightningBolt, LightningBoltSmall } from "@/components/LightningBolt"
 
 function CTASection() {
   return (
-    <section className="py-16 px-4">
+    <section className="relative z-0 py-16 px-6 sm:px-8 lg:px-16 isolate">
       <div className="max-w-4xl mx-auto">
         <div className="liquid-glass rounded-[2rem] p-12 sm:p-20 text-center relative overflow-hidden">
           {/* Background glow */}
@@ -51,7 +51,7 @@ const footerLinks = {
 
 function Footer() {
   return (
-    <footer className="border-t border-border/30 pt-16 pb-8 px-4">
+    <footer className="relative z-0 border-t border-border/30 pt-16 pb-8 px-6 sm:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

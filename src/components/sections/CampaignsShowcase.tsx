@@ -91,7 +91,7 @@ const stats = [
 
 export function CampaignsShowcase() {
   return (
-    <section className="py-32 px-4">
+    <section className="relative z-0 py-32 px-6 sm:px-8 lg:px-16 isolate">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left — Visual */}
         <MockCampaignsUI />

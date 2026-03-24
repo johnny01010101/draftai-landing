@@ -29,7 +29,7 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="relative py-32 px-4 overflow-hidden">
+    <section className="relative z-0 py-32 px-6 sm:px-8 lg:px-16 overflow-hidden isolate">
       {/* Animated gradient blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div

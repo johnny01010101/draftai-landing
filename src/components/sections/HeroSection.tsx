@@ -44,7 +44,7 @@ const marqueeItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative z-10 min-h-screen flex flex-col overflow-hidden isolate">
       {/* Background gradient */}
       <div
         className="absolute inset-0"
@@ -67,7 +67,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Navbar */}
-        <nav className="flex justify-center pt-4 px-4">
+        <nav className="flex justify-center pt-4 px-6 sm:px-8 lg:px-16">
           <div className="liquid-glass rounded-3xl px-4 py-2.5 flex items-center gap-6 max-w-[850px] w-full">
             {/* Logo */}
             <div className="flex items-center gap-2 shrink-0">
@@ -97,7 +97,7 @@ export function HeroSection() {
         </nav>
 
         {/* Hero content */}
-        <div className="flex-1 flex flex-col items-center justify-center px-4 text-center">
+        <div className="flex-1 flex flex-col items-center justify-center px-6 sm:px-8 lg:px-16 text-center">
           {/* Announcement badge */}
           <div className="liquid-glass rounded-full px-4 py-1.5 flex items-center gap-2 mb-8">
             <span className="text-sm text-muted-foreground">
@@ -129,7 +129,7 @@ export function HeroSection() {
         </div>
 
         {/* Social proof bar */}
-        <div className="relative z-10 pb-8 px-4">
+        <div className="relative z-10 pb-8 px-6 sm:px-8 lg:px-16">
           <div className="flex flex-col sm:flex-row items-center gap-4 max-w-5xl mx-auto">
             <span className="text-foreground/50 text-sm whitespace-nowrap shrink-0">
               Trusted by B2B sales teams at
