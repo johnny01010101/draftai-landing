@@ -9,7 +9,7 @@ import { CTAFooterWrapper } from "@/components/sections/CTAFooterWrapper"
 
 function App() {
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <main className="min-h-screen w-full bg-background text-foreground overflow-x-hidden">
       <HeroSection />
       <HowItWorksSection />
       <FeatureDeepDive />

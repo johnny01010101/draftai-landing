@@ -3,12 +3,12 @@ import { LightningBolt, LightningBoltSmall } from "@/components/LightningBolt"
 
 function CTASection() {
   return (
-    <section className="relative z-0 py-16 px-6 sm:px-8 lg:px-16 isolate">
+    <section className="relative z-0 py-16 px-6 sm:px-12 lg:px-24 isolate">
       <div className="max-w-4xl mx-auto">
-        <div className="liquid-glass rounded-[2rem] p-12 sm:p-20 text-center relative overflow-hidden">
+        <div className="liquid-glass rounded-[2rem] p-12 sm:p-20 text-center overflow-hidden">
           {/* Background glow */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 -z-10 pointer-events-none"
             style={{
               background:
                 "radial-gradient(ellipse at 50% 30%, hsl(252 100% 15% / 0.3) 0%, transparent 60%)",
@@ -21,18 +21,18 @@ function CTASection() {
               <LightningBolt size={80} className="opacity-80" />
             </div>
 
-            <h2 className="text-hero-heading text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-4">
+            <h2 className="text-hero-heading text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-4 text-center mx-auto">
               Your Next 1,000 Cold Emails
               <br />
               Write Themselves
             </h2>
 
-            <p className="text-muted-foreground text-base max-w-md mx-auto mb-8">
+            <p className="text-muted-foreground text-base max-w-md mx-auto mb-8 text-center">
               Join sales teams already using DraftAI to personalize outreach at scale. Free to
               start. No credit card required.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button variant="hero">Start Drafting Free</Button>
               <Button variant="heroSecondary">Book a Demo</Button>
             </div>
@@ -51,7 +51,7 @@ const footerLinks = {
 
 function Footer() {
   return (
-    <footer className="relative z-0 border-t border-border/30 pt-16 pb-8 px-6 sm:px-8 lg:px-16">
+    <footer className="relative z-0 border-t border-border/30 pt-16 pb-8 px-6 sm:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto">
         {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

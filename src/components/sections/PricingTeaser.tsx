@@ -29,14 +29,14 @@ const plans = [
 
 export function PricingTeaser() {
   return (
-    <section className="relative z-0 py-32 px-6 sm:px-8 lg:px-16 isolate">
+    <section className="relative z-0 py-32 px-6 sm:px-12 lg:px-24 isolate">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-hero-heading text-3xl sm:text-5xl font-semibold leading-tight tracking-tight">
+        <div className="text-center mx-auto mb-16">
+          <h2 className="text-hero-heading text-3xl sm:text-5xl font-semibold leading-tight tracking-tight text-center mx-auto">
             Simple Pricing
           </h2>
-          <p className="text-muted-foreground text-lg mt-4">
+          <p className="text-muted-foreground text-lg mt-4 text-center mx-auto">
             Start free. Upgrade when you're ready.
           </p>
         </div>
@@ -52,29 +52,31 @@ export function PricingTeaser() {
                   : ""
               }`}
             >
-              {/* Badge */}
-              <span
-                className={`self-start text-xs font-medium px-3 py-1 rounded-full mb-6 ${plan.badgeClass}`}
-              >
-                {plan.badge}
-              </span>
+              <div className="relative z-10 flex flex-col flex-1">
+                {/* Badge */}
+                <span
+                  className={`self-start text-xs font-medium px-3 py-1 rounded-full mb-6 ${plan.badgeClass}`}
+                >
+                  {plan.badge}
+                </span>
 
-              {/* Plan name */}
-              <h3 className="text-2xl font-semibold text-foreground mb-6">{plan.name}</h3>
+                {/* Plan name */}
+                <h3 className="text-2xl font-semibold text-foreground mb-6">{plan.name}</h3>
 
-              {/* Features */}
-              <ul className="space-y-3 flex-1 mb-8">
-                {plan.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-3 text-sm text-foreground/80">
-                    <Check className="w-4 h-4 text-primary shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+                {/* Features */}
+                <ul className="space-y-3 flex-1 mb-8">
+                  {plan.features.map((f, j) => (
+                    <li key={j} className="flex items-center gap-3 text-sm text-foreground/80">
+                      <Check className="w-4 h-4 text-primary shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
 
-              <Button variant={plan.ctaVariant} className="w-full">
-                {plan.cta}
-              </Button>
+                <Button variant={plan.ctaVariant} className="w-full">
+                  {plan.cta}
+                </Button>
+              </div>
             </div>
           ))}
         </div>

@@ -33,50 +33,52 @@ const campaigns = [
 
 function MockCampaignsUI() {
   return (
-    <div className="liquid-glass rounded-3xl aspect-[4/3] overflow-hidden p-6 flex flex-col">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between mb-5 pb-3 border-b border-border/30">
-        <div className="flex items-center gap-2">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-white/10" />
-            <div className="w-3 h-3 rounded-full bg-white/10" />
-            <div className="w-3 h-3 rounded-full bg-white/10" />
+    <div className="liquid-glass rounded-3xl aspect-[4/3] p-6 flex flex-col overflow-hidden">
+      <div className="relative z-10 flex flex-col flex-1">
+        {/* Toolbar */}
+        <div className="flex items-center justify-between mb-5 pb-3 border-b border-border/30">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+            </div>
+            <span className="text-xs text-muted-foreground ml-2">Campaigns</span>
           </div>
-          <span className="text-xs text-muted-foreground ml-2">Campaigns</span>
+          <div className="text-xs text-primary">3 active</div>
         </div>
-        <div className="text-xs text-primary">3 active</div>
-      </div>
 
-      {/* Campaign cards */}
-      <div className="flex-1 space-y-3 overflow-hidden">
-        {campaigns.map((c, i) => (
-          <div
-            key={i}
-            className="bg-white/[0.02] rounded-xl p-4 border border-border/20 hover:border-border/40 transition-colors"
-          >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-foreground">{c.name}</span>
-              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${c.statusColor}`}>
-                {c.status}
-              </span>
+        {/* Campaign cards */}
+        <div className="flex-1 space-y-3 overflow-hidden">
+          {campaigns.map((c, i) => (
+            <div
+              key={i}
+              className="bg-white/[0.02] rounded-xl p-4 border border-border/20 hover:border-border/40 transition-colors"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-foreground">{c.name}</span>
+                <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${c.statusColor}`}>
+                  {c.status}
+                </span>
+              </div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${c.aeColor}`}>
+                  {c.ae}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {c.done}/{c.contacts} contacts
+                </span>
+              </div>
+              {/* Progress bar */}
+              <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary/60 rounded-full transition-all"
+                  style={{ width: `${(c.done / c.contacts) * 100}%` }}
+                />
+              </div>
             </div>
-            <div className="flex items-center gap-3 mb-3">
-              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${c.aeColor}`}>
-                {c.ae}
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {c.done}/{c.contacts} contacts
-              </span>
-            </div>
-            {/* Progress bar */}
-            <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-primary/60 rounded-full transition-all"
-                style={{ width: `${(c.done / c.contacts) * 100}%` }}
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -91,7 +93,7 @@ const stats = [
 
 export function CampaignsShowcase() {
   return (
-    <section className="relative z-0 py-32 px-6 sm:px-8 lg:px-16 isolate">
+    <section className="relative z-0 py-32 px-6 sm:px-12 lg:px-24 isolate">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left — Visual */}
         <MockCampaignsUI />
@@ -99,8 +101,8 @@ export function CampaignsShowcase() {
         {/* Right — Content */}
         <div>
           <div className="liquid-glass rounded-full px-4 py-1.5 inline-flex items-center gap-2 mb-6">
-            <span className="text-sm text-muted-foreground">Campaign Manager</span>
-            <span className="bg-primary/20 text-primary text-xs font-medium px-2 py-0.5 rounded-full flex items-center gap-0.5">
+            <span className="relative z-10 text-sm text-muted-foreground">Campaign Manager</span>
+            <span className="relative z-10 bg-primary/20 text-primary text-xs font-medium px-2 py-0.5 rounded-full flex items-center gap-0.5">
               Built In <ChevronRight className="w-3 h-3" />
             </span>
           </div>
@@ -120,8 +122,10 @@ export function CampaignsShowcase() {
           <div className="grid grid-cols-2 gap-4 mb-8">
             {stats.map((s, i) => (
               <div key={i} className="liquid-glass rounded-2xl p-4">
-                <div className="text-2xl font-semibold text-foreground">{s.value}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+                <div className="relative z-10">
+                  <div className="text-2xl font-semibold text-foreground">{s.value}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+                </div>
               </div>
             ))}
           </div>
